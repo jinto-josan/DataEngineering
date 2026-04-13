@@ -19,9 +19,11 @@ dimension_data={
         "CANCELLATION_CODE":"https://www.transtats.bts.gov/Download_Lookup.asp?Y11x72=Y_PNaPRYYNgVba"
 
     }
+url = "https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ&QO_fu146_anzr=b0-gvzr"
 tmpDir=f"{os.getcwd()}/tmp"
 if not os.path.exists(tmpDir):
     os.makedirs(tmpDir)
+
 
 
 def fetch_data_yearly(target_year, out_dir):
@@ -42,7 +44,7 @@ def get_file_name(target_year, target_month):
     return f"airline_data_{target_year}_{months[target_month-1]}"
 
 def fetch_data(target_year, target_month, out_dir):
-    url = "https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGJ&QO_fu146_anzr=b0-gvzr"
+    
 
     # Start a session to handle cookies automatically
     session = requests.Session()

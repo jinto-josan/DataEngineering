@@ -17,14 +17,22 @@ class DatabricksHelpers:
         
 
     def current_catalog(self) -> str:
-        return f'{self.current_user().split(".")[0]}s_catalog'
+        return f"{self.current_user().split(".")[0]}s_catalog"
 
     def current_user(self) -> str:
         return self.dbutils.notebook.entry_point.getDbutils().notebook().getContext().userName().get().split("@")[0]
 
-    def working_directory(self) -> str:
+    def volume_directory(self) -> str:
         #return f"/FileStore/{self.current_user()}/{self.exercise_name}"
-        return f"/Volumes/{self.current_catalog()}/{self.exercise_name}/{self.volume}/"
+        return f"/Volumes/{self.current_catalog()}/{self.exercise_name}/{self.volume}"
+    
+    def schemas_directory(self) -> str:
+        #return f"/FileStore/{self.current_user()}/{self.exercise_name}"
+        return f"/Volumes/{self.current_catalog()}/{self.exercise_name}/schemas"
+    def checkpoints_directory(self) -> str:
+        #return f"/FileStore/{self.current_user()}/{self.exercise_name}"
+        return f"/Volumes/{self.current_catalog()}/{self.exercise_name}/checkpoints"
+    
     
     # https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-syntax-ddl-create-catalog
     def initialize_catalog(self):
@@ -34,6 +42,8 @@ class DatabricksHelpers:
         self.spark_session.sql(f"CREATE SCHEMA IF NOT EXISTS {self.exercise_name}")
         self.spark_session.sql(f"USE SCHEMA {self.exercise_name}")
         self.spark_session.sql(f"CREATE VOLUME IF NOT EXISTS {self.volume}")
+        self.spark_session.sql(f"CREATE VOLUME IF NOT EXISTS schemas")
+        self.spark_session.sql(f"CREATE VOLUME IF NOT EXISTS checkpoints")
 
     
 
