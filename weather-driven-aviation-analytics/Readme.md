@@ -2,6 +2,9 @@
 
 Building a production-ready ELT pipeline that correlates severe weather events with flight delays and cancellations.
 
+<img width="2450" height="1752" alt="Screenshot 2026-07-11 at 9 43 00 AM" src="https://github.com/user-attachments/assets/f8421c39-0239-4716-a340-1731b8a2a9b3" />
+
+
 ## Data Sources
 - **Flights**: US Bureau of Transportation Statistics (BTS) Flight Data (monthly CSVs).
   - [BTS data library](https://www.transtats.bts.gov/DataIndex.asp) -> then click on aviation in data finder -> airline -Airline On-Time Performance Data -> Reporting Carrier On-Time Performance (1987-present)
