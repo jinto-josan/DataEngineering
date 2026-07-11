@@ -2,6 +2,10 @@
 
 **Eco-Pulse** is an advanced data engineering pipeline for analyzing air quality metrics across Indian cities. It integrates real-time air quality data from the OpenAQ API with geographical and demographic information to provide comprehensive environmental intelligence.
 
+<img width="3070" height="1790" alt="Screenshot 2026-07-11 at 9 51 14 AM" src="https://github.com/user-attachments/assets/4361a0f0-6402-42bc-a242-ae01c14b2548" />
+<img width="3222" height="1670" alt="Screenshot 2026-07-11 at 9 50 19 AM" src="https://github.com/user-attachments/assets/f03160ec-567e-444e-a052-94c30b40a423" />
+
+
 ## 📋 Overview
 
 Eco-Pulse implements a modern medallion architecture (Bronze-Silver-Gold) to process air quality index (AQI) data, population statistics, and surface temperature measurements. The pipeline ingests streaming data, performs data quality transformations, and generates analytics-ready datasets for environmental monitoring.
